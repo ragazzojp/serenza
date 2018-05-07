@@ -1,0 +1,52 @@
+html {
+    height: 100%;
+}
+
+body {
+    display: none;
+    height: 100%;
+    background-color: #222;
+}
+
+#words, #settings {
+    min-height: 80%;
+}
+
+#words {
+    background-color: black;
+    animation-name: fading;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+}
+
+#controls {
+    height: 20%;
+    max-height: 20%;
+}
+
+#word {
+    font-size: 9vw;
+    animation-name: flashing;
+    animation-iteration-count: infinite;
+    animation-duration: 80ms;
+    animation-direction: alternate;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes flashing {
+    from {
+        color: black;
+    }
+    to {
+        color: white;
+    }
+}
+
+@keyframes fading {
+    from {
+        background-color: #222;
+    }
+    to {
+        background-color: black;
+    }
+}

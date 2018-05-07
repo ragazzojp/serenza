@@ -1,0 +1,98 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Serenza</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/serenza.css">
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap-bundle.min.js"></script>
+    <script src="js/serenza.js"></script>
+  </head>
+  <body class="text-light">
+    <div class="container-fluid h-100">
+      <div id="words" class="row align-items-center text-center">
+        <div class="col">
+          <div id="word" class="text-monospace"><!-- Words will appear in this element one by one --></div>
+        </div>
+      </div>
+      <div id="settings" class="form-row align-items-center justify-content-center">
+        <fieldset class="form-group col-md ml-md-5 p-3">
+          <legend>Language</legend>
+          <div class="form-check">
+            <input id="lang_it" type="radio" class="form-check-input" name="lang" value="it" checked>
+            <label class="form-check-label" for="lang_it">Italian</label>
+          </div>
+          <div class="form-check">
+            <input id="lang_de" type="radio" class="form-check-input" name="lang" value="de">
+            <label class="form-check-label" for="lang_de">German</label>
+          </div>
+          <div class="form-check">
+            <input id="lang_fr" type="radio" class="form-check-input" name="lang" value="fr">
+            <label class="form-check-label" for="lang_fr">French</label>
+          </div>
+          <div class="form-check">
+            <input id="lang_en" type="radio" class="form-check-input" name="lang" value="en">
+            <label class="form-check-label" for="lang_en">English</label>
+          </div>
+        </fieldset>
+        <fieldset class="form-group col-md p-3">
+          <legend>Length of the words</legend>
+          <div class="form-check">
+            <input id="len1" type="radio" class="form-check-input" name="len" value="1">
+            <label class="form-check-label" for="len1">Very short</label>
+          </div>
+          <div class="form-check">
+            <input id="len2" type="radio" class="form-check-input" name="len" value="2" checked>
+            <label class="form-check-label" for="len2">Medium</label>
+          </div>
+          <div class="form-check">
+            <input id="len3" type="radio" class="form-check-input" name="len" value="3">
+            <label class="form-check-label" for="len3">Long</label>
+          </div>
+          <div class="form-check">
+            <input id="len4" type="radio" class="form-check-input" name="len" value="4">
+            <label class="form-check-label" for="len4">Very long</label>
+          </div>
+        </fieldset>
+        <fieldset class="form-group col-md p-3">
+          <legend>Amount of time each word is displayed</legend>
+          <div class="form-check">
+            <input id="time1" type="radio" class="form-check-input" name="time" value="1">
+            <label class="form-check-label" for="time1">Short</label>
+          </div>
+          <div class="form-check">
+            <input id="time2" type="radio" class="form-check-input" name="time" value="2" checked>
+            <label class="form-check-label" for="time2">Medium</label>
+          </div>
+          <div class="form-check">
+            <input id="time3" type="radio" class="form-check-input" name="time" value="3">
+            <label class="form-check-label" for="time3">Long</label>
+          </div>
+        </fieldset>
+        <fieldset class="form-group col-md mr-md-5 p-3">
+          <legend>Duration of the exercise</legend>
+          <div class="form-check">
+            <input id="duration1" type="radio" class="form-check-input" name="duration" value="1">
+            <label class="form-check-label" for="duration1">5 minutes</label>
+          </div>
+          <div class="form-check">
+            <input id="duration2" type="radio" class="form-check-input" name="duration" value="2" checked>
+            <label class="form-check-label" for="duration2">10 minutes</label>
+          </div>
+          <div class="form-check">
+            <input id="duration3" type="radio" class="form-check-input" name="duration" value="3">
+            <label class="form-check-label" for="duration3">15 minutes</label>
+          </div>
+        </fieldset>
+      </div>
+      <div id="controls" class="row align-items-center text-center">
+        <div class="col">
+          <button id="play" type="button" class="btn btn-success mx-3">Play</button>
+          <button id="stop" type="button" class="btn btn-danger mx-3">Stop</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
