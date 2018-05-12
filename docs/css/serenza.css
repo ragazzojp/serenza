@@ -5,7 +5,7 @@ html {
 body {
     display: none;
     height: 100%;
-    background-color: #222;
+    background-color: #181818;
 }
 
 #words, #settings {
@@ -25,7 +25,8 @@ body {
 }
 
 #word {
-    font-size: 9vw;
+    font-size: 12vw;
+    font-family: "Times New Roman", Times, serif;
     animation-name: flashing;
     animation-iteration-count: infinite;
     animation-duration: 80ms;
@@ -44,7 +45,7 @@ body {
 
 @keyframes fading {
     from {
-        background-color: #222;
+        background-color: #181818;
     }
     to {
         background-color: black;
