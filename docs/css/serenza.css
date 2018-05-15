@@ -26,7 +26,7 @@ body {
 
 #word {
     font-size: 12vw;
-    font-family: "Times New Roman", Times, serif;
+    font-family: "Roboto Slab", serif;
     animation-name: flashing;
     animation-iteration-count: infinite;
     animation-duration: 80ms;
