@@ -27,19 +27,48 @@ body {
 #word {
     font-size: 12vw;
     font-family: "Roboto Slab", serif;
-    animation-name: flashing;
     animation-iteration-count: infinite;
     animation-duration: 80ms;
     animation-direction: alternate;
     animation-timing-function: ease-in-out;
 }
 
-@keyframes flashing {
+.white {
+    animation-name: flashing-white;
+}
+
+.red {
+    animation-name: flashing-red;
+}
+
+.green {
+    animation-name: flashing-green;
+}
+
+@keyframes flashing-white {
     from {
         color: black;
     }
     to {
-        color: white;
+        color: #FFF;
+    }
+}
+
+@keyframes flashing-red {
+    from {
+        color: black;
+    }
+    to {
+        color: #F00;
+    }
+}
+
+@keyframes flashing-green {
+    from {
+        color: black;
+    }
+    to {
+        color: #0E0;
     }
 }
 

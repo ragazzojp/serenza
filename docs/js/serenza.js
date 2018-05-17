@@ -17,6 +17,10 @@ const translations = {
         len_medium: "Media",
         len_long: "Lunga",
         len_verylong: "Molto lunga",
+        color_legend: "Colore delle parole",
+        color_white: "Bianco",
+        color_red: "Rosso",
+        color_green: "Verde",
         time_legend: "Tempo di visualizzazione di ogni parola",
         time_short: "Corto",
         time_medium: "Medio",
@@ -35,6 +39,10 @@ const translations = {
         len_medium: "Medium",
         len_long: "Long",
         len_verylong: "Very long",
+        color_legend: "Color of the words",
+        color_white: "White",
+        color_red: "Red",
+        color_green: "Green",
         time_legend: "Amount of time each word is displayed",
         time_short: "Short",
         time_medium: "Medium",
@@ -53,6 +61,10 @@ const translations = {
         len_medium: "Moyenne",
         len_long: "Longue",
         len_verylong: "Très longue",
+        color_legend: "Couleur des mots",
+        color_white: "Blanc",
+        color_red: "Rouge",
+        color_green: "Vert",
         time_legend: "Temps d'affichage de chaque mot",
         time_short: "Court",
         time_medium: "Moyen",
@@ -71,6 +83,10 @@ const translations = {
         len_medium: "Durchschnittliche",
         len_long: "Lange",
         len_verylong: "Sehr lange",
+        color_legend: "Wörterfarbe",
+        color_white: "Weiß",
+        color_red: "Rot",
+        color_green: "Grün",
         time_legend: "Anzeigezeit jedes Wortes",
         time_short: "Kurze",
         time_medium: "Durchschnittliche",
@@ -123,6 +139,27 @@ function applyState() {
         // Parse the settings
         const settings = parseSettings();
         console.log("Settings", settings);
+
+        // Set the color
+        switch (settings.color) {
+            case 1:
+                $("#word").addClass("white");
+                $("#word").removeClass("red");
+                $("#word").removeClass("green");
+                break;
+
+            case 2:
+                $("#word").removeClass("white");
+                $("#word").addClass("red");
+                $("#word").removeClass("green");
+                break;
+
+            case 3:
+                $("#word").removeClass("white");
+                $("#word").removeClass("red");
+                $("#word").addClass("green");
+                break;
+        }
 
         // Prepare the word list
         wordList = prepareWordList(words[settings.lang], settings.len);
@@ -232,11 +269,13 @@ function setNextWord() {
 function parseSettings() {
     const lang = $("#settings input[name=lang]:checked").val();
     const len = parseInt($("#settings input[name=len]:checked").val());
+    const color = parseInt($("#settings input[name=color]:checked").val());
     const time = parseInt($("#settings input[name=time]:checked").val());
     const duration = parseInt($("#settings input[name=duration]:checked").val());
     return {
         lang: lang,
         len: len,
+        color: color,
         time: time,
         duration: duration
     }
