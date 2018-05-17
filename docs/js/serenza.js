@@ -11,90 +11,98 @@ const words = { };
 // UI translations
 const translations = {
     it: {
+        words_header: "Parole",
         lang_legend: "Lingua",
-        len_legend: "Lunghezza delle parole",
+        color_legend: "Colore",
+        color_white: "Bianco",
+        color_red: "Rosso",
+        color_green: "Verde",
+        len_legend: "Lunghezza",
         len_short: "Corta",
         len_medium: "Media",
         len_long: "Lunga",
         len_verylong: "Molto lunga",
-        color_legend: "Colore delle parole",
-        color_white: "Bianco",
-        color_red: "Rosso",
-        color_green: "Verde",
-        time_legend: "Tempo di visualizzazione di ogni parola",
-        time_short: "Corto",
-        time_medium: "Medio",
-        time_long: "Lungo",
-        duration_legend: "Durata dell'esercizio",
+        exercise_header: "Esercizio",
+        duration_legend: "Durata",
         duration_5min: "5 minuti",
         duration_10min: "10 minuti",
         duration_15min: "15 minuti",
+        speed_legend: "Velocità",
+        speed_high: "Alta",
+        speed_medium: "Media",
+        speed_low: "Bassa",
         play: "Play",
         stop: "Stop"
     },
     en: {
+        words_header: "Words",
         lang_legend: "Language",
-        len_legend: "Length of the words",
+        color_legend: "Color",
+        color_white: "White",
+        color_red: "Red",
+        color_green: "Green",
+        len_legend: "Length",
         len_short: "Short",
         len_medium: "Medium",
         len_long: "Long",
         len_verylong: "Very long",
-        color_legend: "Color of the words",
-        color_white: "White",
-        color_red: "Red",
-        color_green: "Green",
-        time_legend: "Amount of time each word is displayed",
-        time_short: "Short",
-        time_medium: "Medium",
-        time_long: "Long",
-        duration_legend: "Duration of the exercise",
+        exercise_header: "Exercise",
+        duration_legend: "Duration",
         duration_5min: "5 minutes",
         duration_10min: "10 minutes",
         duration_15min: "15 minutes",
+        speed_legend: "Speed",
+        speed_high: "High",
+        speed_medium: "Medium",
+        speed_low: "Low",
         play: "Play",
         stop: "Stop"
     },
     fr: {
+        words_header: "Mots",
         lang_legend: "Langue",
-        len_legend: "Longueur des mots",
+        color_legend: "Couleur",
+        color_white: "Blanc",
+        color_red: "Rouge",
+        color_green: "Vert",
+        len_legend: "Longueur",
         len_short: "Courte",
         len_medium: "Moyenne",
         len_long: "Longue",
         len_verylong: "Très longue",
-        color_legend: "Couleur des mots",
-        color_white: "Blanc",
-        color_red: "Rouge",
-        color_green: "Vert",
-        time_legend: "Temps d'affichage de chaque mot",
-        time_short: "Court",
-        time_medium: "Moyen",
-        time_long: "Long",
-        duration_legend: "Durée de l'exercice",
+        exercise_header: "Exercice",
+        duration_legend: "Durée",
         duration_5min: "5 minutes",
         duration_10min: "10 minutes",
         duration_15min: "15 minutes",
+        speed_legend: "Vitesse",
+        speed_high: "Haute",
+        speed_medium: "Moyenne",
+        speed_low: "Basse",
         play: "Lecture",
         stop: "Arrêt"
     },
     de: {
+        words_header: "Wörter",
         lang_legend: "Sprache",
-        len_legend: "Wörterlänge",
+        color_legend: "Farbe",
+        color_white: "Weiß",
+        color_red: "Rot",
+        color_green: "Grün",
+        len_legend: "Länge",
         len_short: "Kurze",
         len_medium: "Durchschnittliche",
         len_long: "Lange",
         len_verylong: "Sehr lange",
-        color_legend: "Wörterfarbe",
-        color_white: "Weiß",
-        color_red: "Rot",
-        color_green: "Grün",
-        time_legend: "Anzeigezeit jedes Wortes",
-        time_short: "Kurze",
-        time_medium: "Durchschnittliche",
-        time_long: "Lange",
-        duration_legend: "Dauer der Übung",
+        exercise_header: "Übung",
+        duration_legend: "Dauer",
         duration_5min: "5 Minuten",
         duration_10min: "10 Minuten",
         duration_15min: "15 Minuten",
+        speed_legend: "Geschwindigkeit",
+        speed_high: "Hoche",
+        speed_medium: "Durchschnittliche",
+        speed_low: "Niedrige",
         play: "Wiedergabe",
         stop: "Stopp"
     }
@@ -147,13 +155,11 @@ function applyState() {
                 $("#word").removeClass("red");
                 $("#word").removeClass("green");
                 break;
-
             case 2:
                 $("#word").removeClass("white");
                 $("#word").addClass("red");
                 $("#word").removeClass("green");
                 break;
-
             case 3:
                 $("#word").removeClass("white");
                 $("#word").removeClass("red");
@@ -172,7 +178,7 @@ function applyState() {
         // Set the timer to update the word
         if (interval)
             clearInterval(interval);
-        interval = setInterval(setNextWord, settings.time * 2 * 1000);
+        interval = setInterval(setNextWord, settings.speed * 2 * 1000);
 
         // Set the duration of the exercise
         if (timeout)
@@ -268,16 +274,16 @@ function setNextWord() {
 
 function parseSettings() {
     const lang = $("#settings input[name=lang]:checked").val();
-    const len = parseInt($("#settings input[name=len]:checked").val());
     const color = parseInt($("#settings input[name=color]:checked").val());
-    const time = parseInt($("#settings input[name=time]:checked").val());
+    const len = parseInt($("#settings input[name=len]:checked").val());
     const duration = parseInt($("#settings input[name=duration]:checked").val());
+    const speed = parseInt($("#settings input[name=speed]:checked").val());
     return {
         lang: lang,
-        len: len,
         color: color,
-        time: time,
-        duration: duration
+        len: len,
+        duration: duration,
+        speed: speed
     }
 }
 

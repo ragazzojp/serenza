@@ -1,11 +1,16 @@
 html {
     height: 100%;
+    font-size: 1.20em;
 }
 
 body {
     display: none;
     height: 100%;
     background-color: #181818;
+}
+
+#play, #stop {
+    font-size: 1.20em;
 }
 
 #words, #settings {
@@ -15,7 +20,7 @@ body {
 #words {
     background-color: black;
     animation-name: fading;
-    animation-duration: 5s;
+    animation-duration: 10s;
     animation-timing-function: linear;
 }
 
@@ -28,9 +33,9 @@ body {
     font-size: 12vw;
     font-family: "Roboto Slab", serif;
     animation-iteration-count: infinite;
-    animation-duration: 80ms;
+    animation-duration: 100ms;
     animation-direction: alternate;
-    animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in;
 }
 
 .white {
