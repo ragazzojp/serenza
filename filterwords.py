@@ -4,7 +4,7 @@ import argparse
 import re
 import json
 
-parser = argparse.ArgumentParser('Cleans up a word file and convert it to JSON.')
+parser = argparse.ArgumentParser(description='Cleans up a word file and convert it to JSON.')
 parser.add_argument('input', help='The name of the input file in text format.')
 parser.add_argument('output', help='The name of the output file in JSON format.')
 parser.add_argument('-l', '--minlength', type=int, default=4, help='Minimum length of each word.')
