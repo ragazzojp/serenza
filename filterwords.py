@@ -21,11 +21,12 @@ def parse(s):
     if match:
         word = match.group(1)
         refs = int(match.group(2))
-        if len(word) >= args.minlength \
-        and refs >= args.minrefs:
+        if len(word) >= args.minlength and refs >= args.minrefs:
             return word
         else:
             return ""
+    else:
+        return ""
 
 with open(args.input, 'r', encoding='utf-8') as fin:
     with open(args.output, 'w', encoding='utf-8') as fout:
