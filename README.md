@@ -3,6 +3,10 @@
 Serenza is the codename of this project.
 It's not clear if one day it will have an official name.
 
+The project is visible at:
+
+👉 https://ragazzojp.github.io/serenza/ 👈
+
 ## What is it
 
 The project will be described at a later stage.
